@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.ws.rs.core.Configuration;
 import javax.ws.rs.core.FeatureContext;
 
+import ch.ivyteam.ivy.environment.Ivy;
+
 public class MsGraphAuthentication implements javax.ws.rs.core.Feature
 {
   public static interface Property
@@ -19,7 +21,7 @@ public class MsGraphAuthentication implements javax.ws.rs.core.Feature
     String appId = parseApp(context.getConfiguration());
     Set<String> scopes = parseScope(context.getConfiguration());
     
-    GraphDeviceTokenFilter graphAuth = new GraphDeviceTokenFilter(appId, scopes);
+    GraphDeviceTokenFilter graphAuth = new GraphDeviceTokenFilter(appId, scopes, Ivy.log());
     context.register(graphAuth);
     
     return true;

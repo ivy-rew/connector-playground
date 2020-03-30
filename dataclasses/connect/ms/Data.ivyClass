@@ -1,2 +1,6 @@
 Data #class
 connect.ms #namespace
+me com.microsoft.graph.models.extensions.User #field
+me PERSISTENT #fieldModifier
+code com.microsoft.aad.msal4j.DeviceCode #field
+code PERSISTENT #fieldModifier
