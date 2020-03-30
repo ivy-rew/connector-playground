@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<restClients/>
+<restClients>
+    <restClient>
+        <uuid>28e1d26d-a492-401f-9620-64210dc91f7a</uuid>
+        <name>msGraph</name>
+        <configuration>
+            <uri>https://graph.microsoft.com/{api.version}</uri>
+            <property>
+                <name>JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES</name>
+                <value>false</value>
+                <password>false</password>
+            </property>
+            <property>
+                <name>ms.appId</name>
+                <value>0960abf3-45f9-4ba3-8975-e2b25a5178e3</value>
+                <password>false</password>
+            </property>
+            <property>
+                <name>ms.scopes</name>
+                <value>User.Read</value>
+                <password>false</password>
+            </property>
+            <feature>
+                <class>ch.ivyteam.ivy.rest.client.mapper.JsonFeature</class>
+            </feature>
+            <feature>
+                <class>com.microsoft.auth.jersey.MsGraphAuthentication</class>
+            </feature>
+        </configuration>
+    </restClient>
+</restClients>

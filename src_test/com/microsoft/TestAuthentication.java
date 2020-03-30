@@ -8,13 +8,13 @@ import com.microsoft.auth.Authority;
 
 public class TestAuthentication
 {
-  private static final String[] SCOPES = new String[] {"User.Read"}; // Chat.Read
-
+  public static final String[] SCOPES = new String[] {"User.Read"}; // Chat.Read
+  public static final String TERM_CHAT_ID = "0960abf3-45f9-4ba3-8975-e2b25a5178e3";
+  
   @Test
   public void auth()
   {
-    String termChatId = "0960abf3-45f9-4ba3-8975-e2b25a5178e3";
-    String token = Authority.getUserAccessToken(termChatId, SCOPES);
+    String token = Authority.getUserAccessToken(TERM_CHAT_ID, SCOPES);
     System.out.println(token);
     assertThat(token).isNotEmpty();
   }

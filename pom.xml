@@ -8,24 +8,57 @@
   <packaging>iar</packaging>
   
   <dependencies>
-   <dependency>
-    <groupId>com.microsoft.graph</groupId>
-    <artifactId>microsoft-graph</artifactId>
-    <version>1.6.0</version>
-  </dependency>
-  
-  <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>msal4j</artifactId>
-    <version>1.1.0</version>
-  </dependency>
-  
-<dependency>
-    <groupId>org.assertj</groupId>
-    <artifactId>assertj-core</artifactId>
-    <version>3.15.0</version>
-    <scope>test</scope>
-</dependency>
+
+    <dependency>
+      <groupId>com.microsoft.graph</groupId>
+      <artifactId>microsoft-graph</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+     
+     
+    <dependency>
+      <!-- Graph OAUTH2/OpenId Authentication -->
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>msal4j</artifactId>
+      <version>1.1.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+          <!-- exclude all auth deps: but re-include oauth2-oidc-sdk -->
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>oauth2-oidc-sdk</artifactId>
+      <version>6.5</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.sun.mail</groupId>
+          <artifactId>javax.mail</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.github.stephenc.jcip</groupId>
+          <artifactId>jcip-annotations</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.nimbusds</groupId>
+          <artifactId>lang-tag</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.ow2.asm</groupId>
+          <artifactId>asm</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.15.0</version>
+      <scope>test</scope>
+    </dependency>
   
   </dependencies>
   
