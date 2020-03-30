@@ -14,4 +14,5 @@ https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlad
 - [x] custom stack for http auth request (MSAL4J) which relies upon commons http client and lots of other JARs. Altough, it should be possible to adapt the request from here: com.microsoft.aad.msal4j.DeviceCodeFlowRequest.acquireDeviceCode(String, String, Map<String, String>, ServiceBundle)
  - prooved that IHttpClient from MSAL4J can easily be replaced by "Jersey Delegating" impl. >> com.microsoft.auth.jersey.JerseyMsal4jClient
  - prooved that MSAL4J dependencies can be easily put on a diet by using ivy-core Http stack >> pom.xml
+- [ ] adapting OAUTH flows which require user interaction is not straight forwards: create a proposal for re-usable implementation which is able to interact with third-party websites and return to workflow app when authenticated.
 

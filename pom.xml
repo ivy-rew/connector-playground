@@ -13,6 +13,15 @@
       <groupId>com.microsoft.graph</groupId>
       <artifactId>microsoft-graph</artifactId>
       <version>1.6.0</version>
+      <exclusions>
+        <!-- provide: com.microsoft.graph.models.extensions 
+          convenient POJOs for objects produced and consumed by MS graph
+        -->
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
      
      
